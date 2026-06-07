@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import PostCard from "../components/PostCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { groupByCategory, isPublished, sortPosts, slugify } from "../lib/content";
+import { sitePath } from "../lib/paths";
+
+const allPosts = sortPosts((await getCollection("posts")).filter(isPublished));
+const featuredPosts = allPosts.slice(0, 6);
+const categories = Object.entries(groupByCategory(allPosts));
+---
+
+<BaseLayout
+  title="Launch and maintain GitHub Pages sites without guessing through settings."
+  description="Practical Astro guides for content teams shipping static SEO sites."
+  pathname="/"
+>
+  <section class="hero">
+    <p class="meta">GitPagesKit guides</p>
+    <h1>Launch and maintain GitHub Pages sites without guessing through settings.</h1>
+    <p>
+      Hands-on GitHub Pages guides for static sites, custom domains, and automated deployments.
+    </p>
+  </section>
+
+  <section class="card" style="margin-bottom:24px;">
+    <h2 style="margin-top:0;">Core topics</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;">
+      {categories.map(([category, posts]) => (
+        <a
+          href={sitePath(`/category/${slugify(category)}/`)}
+          style="background:var(--accent-soft);padding:8px 14px;border-radius:999px;"
+        >
+          {category} ({posts.length})
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="post-list">
+    {featuredPosts.map((post) => <PostCard post={post} />)}
+  </section>
+</BaseLayout>
