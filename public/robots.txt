@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yangyangyang-25.github.io/gitpageskit/sitemap-index.xml
+Sitemap: https://gitpageskit.pages.dev/sitemap-index.xml

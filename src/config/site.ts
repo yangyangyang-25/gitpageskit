@@ -4,8 +4,8 @@ export const siteConfig = {
   description:
     "Hands-on GitHub Pages guides for static sites, custom domains, and automated deployments.",
   repo: "gitpageskit",
-  basePath: "/gitpageskit",
-  siteUrl: "https://yangyangyang-25.github.io",
+  basePath: "",
+  siteUrl: "https://gitpageskit.pages.dev",
   nav: [
     { href: "/", label: "Home" },
     { href: "/blog/", label: "Blog" },
