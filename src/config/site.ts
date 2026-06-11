@@ -4,6 +4,10 @@ export const siteConfig = {
   description:
     "Hands-on GitHub Pages guides for static sites, custom domains, and automated deployments.",
   repo: "gitpageskit",
+  author: "Jun Yang",
+  repositoryUrl: "https://github.com/yangyangyang-25/gitpageskit",
+  issuesUrl: "https://github.com/yangyangyang-25/gitpageskit/issues",
+  lastPolicyUpdate: "2026-06-11",
   basePath: "",
   siteUrl: "https://gitpageskit.pages.dev",
   nav: [
